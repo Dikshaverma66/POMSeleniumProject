@@ -39,6 +39,7 @@ public class CommonToAllPages {
 //    }
 
     public void enterInput(By by, String key) {
+
         getDriver().findElement(by).sendKeys(key);
     }
 
@@ -52,12 +53,12 @@ public class CommonToAllPages {
     }
 
     //Write waits here
-    public WebElement presenceOfElement(final By elementLocation) {
+    public WebElement presenceOfElement(By elementLocation) {
         return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }// presence of element means to check whether the element is present on the page or not
 
 
-    public WebElement visibilityOfElementLocated(final By elementLocation) {
+    public WebElement visibilityOfElementLocated(By elementLocation) {
       return new WebDriverWait(getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
     }
 
